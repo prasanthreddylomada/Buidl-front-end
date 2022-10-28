@@ -7,6 +7,46 @@
   pointer-events: none;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+}
+
+li {
+  float: left;
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
+  padding-left: 1%;
+  padding-right: 3%;
+  
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+  color: white;
+}
+
+li a:active {
+  background-color: #04AA6D;
+}
+
+li.right{
+  float: right;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -36,3 +76,5 @@
     transform: rotate(360deg);
   }
 }
+
+
