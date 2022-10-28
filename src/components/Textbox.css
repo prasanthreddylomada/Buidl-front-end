@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    overflow-y: scroll;
+    overflow: auto;
+    scroll-behavior: smooth; 
+    text-align: left;
+    width: 800px;
+  }
