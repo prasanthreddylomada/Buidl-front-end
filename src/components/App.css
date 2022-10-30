@@ -78,3 +78,7 @@ li.right{
 }
 
 
+/* Modify the background color */
+.navbar-custom {
+  max-height: fit-content;
+}

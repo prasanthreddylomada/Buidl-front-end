@@ -1,0 +1,36 @@
+.buttons {
+    background-color:  rgb(164, 165, 165); /* Green */
+    color: white;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    width: 5%;
+    text-align: center;
+  }
+
+  .buttons:hover {
+    background-color: #292b29; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgb(0, 0, 0), 0 17px 50px 0 rgb(0, 0, 0);
+    transform: scale(1.6);
+    transition-duration: 0.5s;
+  }
+
+
+.bodycss{
+    background-color:  rgb(135, 137, 137);
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    transition-duration: 0.5s;
+}
+
+.back{
+    background-color: rgb(135, 137, 137);
+    height: 100vh;
+}
+

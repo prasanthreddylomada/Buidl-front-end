@@ -1,0 +1,53 @@
+.loginbuttons {
+    background-color:  rgb(164, 165, 165); /* Green */
+    color: white;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    margin:auto;
+    
+  }
+
+  .loginbuttons:hover {
+    background-color: #292b29; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgb(0, 0, 0), 0 17px 50px 0 rgb(0, 0, 0);
+    
+  }
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+
+.loginback{
+    background-color: rgba(190, 245, 245, 0.629);
+    height: 100vh;
+    margin: auto;
+}
+
+.Signupbuttons {
+    background-color: rgba(190, 245, 245, 0); /* Green */
+    color: black;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    margin:auto;
+    
+  }
+
+  .Signupbuttons:hover {
+    background-color: #292b29; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgb(0, 0, 0), 0 17px 50px 0 rgb(0, 0, 0);
+    
+  }

@@ -1,36 +1,44 @@
 import React, { Component } from "react";
- 
-class Navigation_page extends Component {
-  render() {
+import { useNavigate } from "react-router-dom";
+import "./Navigation_page.css" 
+
+
+export function Navigation_page() {
+  const navigate = useNavigate();
+
+    const navigateToCricket = () => {
+      navigate('/Cricket');
+    };
     return (
-      <div>
-        <h1>Navigation Page</h1>
+      <div className="back">
+        <h1 align="center">Navigation Page</h1>
+        <h3 align="center"> select a group in which you want to go and talk with all the people interested in that topic</h3>
         <form>
-            <div align="center">
-                <button > Cricket </button>
+            <div className="bodycss" align="center">
+                <button className="buttons" onClick={navigateToCricket}> Cricket </button>
             </div>
-            <div align="center">
-                <button > Food </button>
+            <div className="bodycss" align="center">
+                <button className="buttons" > Food </button>
             </div>
-            <div align="center">
-                <button > Movies </button>
+            <div className="bodycss" align="center">
+                <button className="buttons"> Movies </button>
             </div>
-            <div align="center">
-                    <button > Girls </button>
+            <div className="bodycss" align="center">
+                    <button className="buttons"> Girls </button>
             </div>
-            <div align="center">
-                <button > Boys </button>
+            <div className="bodycss" align="center">
+                <button className="buttons"> Boys </button>
             </div>
-            <div align="center">
-                <button > College </button>
+            <div className="bodycss" align="center">
+                <button className="buttons"> College </button>
             </div>
-            <div align="center">
-                <button > School </button>
+            <div className="bodycss" align="center">
+                <button className="buttons"> School </button>
             </div>
         </form>
       </div>
     );
   }
-}
+
  
 export default Navigation_page;
