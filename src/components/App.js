@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Cricket from './Cricket';
 import Signup from './Signup';
 import Navigation_page from './Navigation_page';
@@ -11,6 +7,7 @@ import Home from './Home';
 import { BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
+
 class App extends Component {
   render() { 
     return ( 
@@ -18,21 +15,14 @@ class App extends Component {
       <Router>
       <div>
         <div>
-        <ul>
-          
-          <li><a href="/">Home</a></li>
-          <li class="right"><a href="/login">Login</a></li>
-          <li class="right"><a href="/signup">Signup</a></li>
-          <li class = "right"><a href="/NavigationPage">Nav</a></li>
-          
-        </ul>
-        </div>
-        <div>
-
+          <ul>          
+            <li><a href="/">Home</a></li>
+            <li class="right"><a href="/signup">Signup</a></li>
+            <li class="right"><a href="/login">Login</a></li>
+            <li class = "right"><a href="/NavigationPage">Groups</a></li>          
+          </ul>
         </div>
       </div>   
-        
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

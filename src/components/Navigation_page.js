@@ -10,7 +10,7 @@ export function Navigation_page() {
       navigate('/Cricket');
     };
     return (
-      <div className="back">
+      <div className="loginback">
         <h1 align="center">Navigation Page</h1>
         <h3 align="center"> select a group in which you want to go and talk with all the people interested in that topic</h3>
         <form>
