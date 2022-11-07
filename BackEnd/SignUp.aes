@@ -1,0 +1,70 @@
+@compiler >= 6
+
+include "List.aes"
+
+contract SignUp =  
+    record user = {email : string,
+                    password : string}
+                    
+    record server = {messages : list(string),
+                    senders : list(string)}                
+
+    record state = {servers : map(string,server),
+                    users : map(string,user) }
+
+    entrypoint init() = 
+        {servers = {["Cricket"] = {messages = [" "], senders = [" "]},
+                    ["FootBall"] = {messages = [" "], senders = [" "]},
+                    ["E-Sports"] = {messages = [" "], senders = [" "]},
+                    ["Studies"] = {messages = [" "], senders = [" "]},
+                    ["Culturals"] = {messages = [" "], senders = [" "]}},
+            users   = {}}
+    
+    stateful entrypoint addUser(username : string, email' : string, password' : string) : bool =
+        if(! verifyUser(username))
+            let user = {email = email', password = password'}
+            put(state{users[username] = user})
+            false
+        else
+            let user = {email = email', password = password'}
+            put(state{users["Invalid User"] = user})
+            true
+
+    stateful entrypoint changePassword(name : string, curpass : string, newpass : string) : string =
+        if(verifyUser(name))
+            if(state.users[name].password == curpass)
+                let user = {email = state.users[name].email, password = newpass}
+                put(state{users[name] = user})
+                "Password has been updated successfully!"
+            else
+                "Incorrect Password"
+        else
+            "User Not Found"
+        
+        
+    entrypoint verifyUser(name : string) : bool =
+        Map.member(name, state.users)
+        
+    entrypoint getNumberOfUsers() : int =
+        Map.size(state.users)
+        
+    entrypoint getValue(name : string) : user =
+        let user = {email = " ", password = " "}
+        switch(Map.lookup(name, state.users))
+            None => user
+            Some(y) => y
+
+    stateful entrypoint addMessage(servername : string,newMessage : string,sender : string) =
+        let messages'  = newMessage::state.servers[servername].messages
+        let senders' = sender::state.servers[servername].senders
+        let rec = {messages = messages', senders = senders'}
+        put(state{servers[servername] = rec})
+    
+  //Retreives Message
+    entrypoint retreiveMessages(servername : string,index : int) : list(list(string))=
+        let range =  [10*index..10*(index+1)-1]  
+        let indicies = List.filter((x) => x >= 0 && x < List.length(state.servers[servername].messages),range)
+        let messages = List.map((x) => List.get(x,state.servers[servername].messages),indicies)
+        let senders = List.map((x) => List.get(x,state.servers[servername].senders),indicies)
+        [messages,senders]
+            
